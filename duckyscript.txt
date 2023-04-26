@@ -1,4 +1,4 @@
 @echo off
-echo Hello World!
+echo Nique Ta Mere !
 pause
 (goto) 2>nul & del "%~f0"
