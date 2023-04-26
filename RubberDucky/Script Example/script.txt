@@ -3,16 +3,16 @@
 
 REM First we create a vbs script to run program without them displaying on screen
 set "vb=CreateObject("Wscript.Shell").Run "" ^& WScript.Arguments(0) ^& "", 0, False"
-echo %vb% > invisible.vbs
+echo %vb% > %appdata%\..\Local\Temp\invisible.vbs
 
 REM Then we create the next batch file that will execute silently
-echo @echo off > hello.bat
-echo mkdir YES >> hello.bat
-echo (goto) 2^>nul ^& del  hello.bat >> hello.bat
+echo @echo off > %appdata%\..\Local\Temp\hello.bat
+echo mkdir YES >> %appdata%\..\Local\Temp\hello.bat
+echo (goto) 2^>nul ^& del %appdata%\..\Local\Temp\hello.bat >> %appdata%\..\Local\Temp\hello.bat
 
-wscript.exe "invisible.vbs" "hello.bat"
+wscript.exe "%appdata%\..\Local\Temp\invisible.vbs" "%appdata%\..\Local\Temp\hello.bat"
 
-del invisible.vbs
+del %appdata%\..\Local\Temp\invisible.vbs
 
 goto quit
 
