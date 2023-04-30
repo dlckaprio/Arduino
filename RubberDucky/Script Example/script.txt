@@ -1,19 +1,7 @@
 @echo off
 
-set "path=%appdata%\..\Local\Temp"
-
-REM First we create a vbs script to run program without them displaying on screen
-set "vb=CreateObject("Wscript.Shell").Run "" ^& WScript.Arguments(0) ^& "", 0, False"
-echo %vb% > %path%\invisible.vbs
-
-REM Then we create the next batch file that will execute silently
-echo @echo off > %path%\hello.bat
-echo mkdir %path%\YES >> %path%\hello.bat
-echo (goto) 2^>nul ^& del %path%\hello.bat >> %path%\hello.bat
-
-wscript.exe "%path%\invisible.vbs" %path%\hello.bat"
-
-del %path%\invisible.vbs
+echo Hello !
+pause
 
 goto quit
 
