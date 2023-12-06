@@ -4,6 +4,9 @@
  * HIDKeyboard.cpp
  *
  * Written by Chris Taylor for SparkFun Electronics, 10/12/12
+
+MODIFIED BY Luca-CRZ
+ 
  *
  * This code is released on the Beerware License. If you use it to make
  * something cool, and you ever happen to meet me, buy me a beer.
