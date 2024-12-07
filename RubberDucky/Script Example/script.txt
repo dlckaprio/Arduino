@@ -1,6 +1,6 @@
 @echo off
 
-echo HELLO
+echo HELLO MONA JE T'AIME
 pause
 
 goto quit
